@@ -1,32 +1,33 @@
-﻿namespace BinarySearch
+﻿namespace BubbleSort
 {
-    using System;
-    using System.Collections.Generic;
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Binary b = new Binary();
-
-            List<string> wordList = new List<string>
+            BubbleSort b1 = new BubbleSort();
+            Console.WriteLine("Bubble Sort");
             
-            {"apple", "banana", "cat", "dog", "elephant", "fish", "grape", "lemon"};
+            Console.WriteLine("enter how many elements you want to enter: ");
+            int n = int.Parse(Console.ReadLine());
 
-            wordList.Sort(); // Ensure the list is sorted before performing binary search
-
-            Console.Write("Enter a word to search: ");
-            string searchWord = Console.ReadLine();
-
-            int index = b.BinarySearch(wordList, searchWord);
-
-            if (index != -1)
+            int[] arr = new int[n];
+            Console.WriteLine("enter array: ");
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Word found at index " + index);
+                arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            else
+
+            Console.WriteLine("Elements in Array: ");
+            foreach (int item in arr)
             {
-                Console.WriteLine("Word not found in the list.");
+                Console.WriteLine(item);
             }
+
+            b1.bubbleSort(arr);
+            Console.WriteLine("Sorted array: ");
+            b1.printArray(arr); 
         }
     }
 }
+
+
